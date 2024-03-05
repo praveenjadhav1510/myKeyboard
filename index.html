@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TypingTest</title>
+    <link rel="stylesheet" type="text/css" href="style-keyboard.css">
+    <link rel="stylesheet" type="text/css" href="style-typingtest.css">
+</head>
+<body>
+<div id="text-box">
+    <div class="heading">Typing test by -Jarvis</div>
+    <div id="results">Accuracy:0.00%</div>
+    <div id="timer">Timer: 0:00.00</div>
+    <div id="original-paragraph"></div>
+    <div class="top"></div>
+    <div class="finctions">
+        <div id="add-text">
+        <select id="paragraph-select" onchange="resetTimer(); loadSelectedParagraph()">
+    <option value="">Select</option>
+    <option value="The quick brown fox jumps over the lazy dog.">The quick brown fox jumps over the lazy dog.</option>
+    <option value="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</option>
+    <option value="Life is like a box of chocolates, you never know what you're gonna get.">Life is like a box of chocolates, you never know what you're gonna get.</option>
+    <option value="To be or not to be, that is the question.">To be or not to be, that is the question.</option>
+    <option value="It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.">It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.</option>
+    <option value="The only way to do great work is to love what you do.">The only way to do great work is to love what you do.</option>
+    <option value="In the end, it's not the years in your life that count. It's the life in your years.">In the end, it's not the years in your life that count. It's the life in your years.</option>
+    <option value="Believe you can and you're halfway there.">Believe you can and you're halfway there.</option>
+    <option value="Success is not final, failure is not fatal: It is the courage to continue that counts.">Success is not final, failure is not fatal: It is the courage to continue that counts.</option>
+    <option value="The only limit to our realization of tomorrow will be our doubts of today.">The only limit to our realization of tomorrow will be our doubts of today.</option>
+    <option value="The future belongs to those who believe in the beauty of their dreams.">The future belongs to those who believe in the beauty of their dreams.</option>
+    <option value="Happiness is not something ready-made. It comes from your own actions.">Happiness is not something ready-made. It comes from your own actions.</option>
+    <option value="In three words I can sum up everything I've learned about life: It goes on.">In three words I can sum up everything I've learned about life: It goes on.</option>
+    <option value="Don't cry because it's over, smile because it happened.">Don't cry because it's over, smile because it happened.</option>
+    <option value="You miss 100% of the shots you don't take.">You miss 100% of the shots you don't take.</option>
+    <option value="The best time to plant a tree was 20 years ago. The second best time is now.">The best time to plant a tree was 20 years ago. The second best time is now.</option>
+    <option value="Whether you think you can or you think you can't, you're right.">Whether you think you can or you think you can't, you're right.</option>
+    <option value="You must be the change you wish to see in the world.">You must be the change you wish to see in the world.</option>
+    <option value="The only person you are destined to become is the person you decide to be.">The only person you are destined to become is the person you decide to be.</option>
+    <option value="Whatever you are, be a good one.">Whatever you are, be a good one.</option>
+</select>
+
+        </div>
+        <div id="add-text">
+            <textarea id="custom-text" placeholder="Try with your won text...." oninput="loadCustomText()"></textarea>
+        </div>
+    </div>
+</div>
+<div class="keybord">
+<div class="main">
+    <div>
+        <textarea id="typing-input" placeholder="Start typing here..." oninput="checkAccuracy()"></textarea>
+    </div>
+    <div class="line-1">
+        <button id='Escape'>esc</button>
+        <div id='sp'></div>
+        <button id='F1'>f1</button>
+        <button id='F2'>f2</button>
+        <button id='F3'>f3</button>
+        <button id='F4'>f4</button>
+        <div id='sp'></div>
+        <button id='F5'>f5</button>
+        <button id='F6'>f6</button>
+        <button id='F7'>f7</button>
+        <button id='F8'>f8</button>
+        <div id='sp'></div>
+        <button id='F9'>f9</button>
+        <button id='F10'>f10</button>
+        <button id='F11'>f11</button>
+        <button id='F12'>f12</button>
+        <div id='sp'></div>
+        <button id='Delete'>Delete</button>
+    </div>
+    <div class="line-2">
+        <button id='`'>`</button>
+        <button id='1'>1</button>
+        <button id='2'>2</button>
+        <button id='3'>3</button>
+        <button id='4'>4</button>
+        <button id='5'>5</button>
+        <button id='6'>6</button>
+        <button id='7'>7</button>
+        <button id='8'>8</button>
+        <button id='9'>9</button>
+        <button id='0'>0</button>
+        <button id='-'>-</button>
+        <button id='='>=</button>
+        <button id='Backspace'>Backspace</button>
+    </div>
+    <div class="line-3">
+        <button id='Tab'>Tab</button>
+        <button id='q'>Q</button>
+        <button id='w'>W</button>
+        <button id='e'>E</button>
+        <button id='r'>R</button>
+        <button id='t'>T</button>
+        <button id='y'>Y</button>
+        <button id='u'>U</button>
+        <button id='i'>I</button>
+        <button id='o'>O</button>
+        <button id='p'>P</button>
+        <button id='['>[</button>
+        <button id=']'>]</button>
+        <button id='\'>\</button>
+    </div>
+    <div class="line-4">
+        <button id='CapsLock'>Caps Lock</button>
+        <button id='a'>A</button>
+        <button id='s'>S</button>
+        <button id='d'>D</button>
+        <button id='f'>F</button>
+        <button id='g'>G</button>
+        <button id='h'>H</button>
+        <button id='j'>J</button>
+        <button id='k'>K</button>
+        <button id='l'>L</button>
+        <button id=';'>;</button>
+        <button id="'">'</button>
+        <button id='Enter'>Enter</button>
+    </div>
+    <div class="line-5">
+        <button id='Shift'>Shift</button>
+        <button id='z'>Z</button>
+        <button id='x'>X</button>
+        <button id='c'>C</button>
+        <button id='v'>V</button>
+        <button id='b'>B</button>
+        <button id='n'>N</button>
+        <button id='m'>M</button>
+        <button id=','>,</button>
+        <button id='.'>.</button>
+        <button id='/'>/</button>
+        <button id='ArrowUp'>Up</button>
+        <button id='Shift2'>Shift</button>
+    </div>
+    <div class="line-6">
+        <button id='Control'>Ctrl</button>
+        <button id='Unidentified'>Fn</button>
+        <button id='Meta'>Win</button>
+        <button id='Alt'>Alt</button>
+        <button id='Space'>Space</button>
+        <button id='AltGraph'>Alt</button>
+        <button id='Menu'>Menu</button>
+        <button id='ArrowLeft'>Left</button>
+        <button id='ArrowDown'>Down</button>
+        <button id='ArrowRight'>Right</button>
+    </div>
+</div>
+<div class="mouse">
+    <div id="pos">Mouseposation</div>
+    <div class="mouse-body">
+        <div id="ml">L</div>
+        <div id="ms">S</div>
+        <div id="mr">R</div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="keyboard.js"></script>
+<script type="text/javascript" src="typingtest.js"></script>
+</body>
+</html>
